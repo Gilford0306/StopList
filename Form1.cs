@@ -27,7 +27,7 @@ namespace StopList
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
 
@@ -99,17 +99,6 @@ namespace StopList
         private void timer1_Tick(object sender, EventArgs e)
         {
             StopApp();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedItem != null)
-            {
-                index = listBox1.SelectedIndex;
-                textBox2.Text = apps[index].Name.ToString();
-                textBox4.Text = apps[index].TimeWork.ToString();
-            }
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -255,6 +244,16 @@ namespace StopList
         {
             Form2 newForm = new Form2();
             newForm.Show();
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                index = listBox1.SelectedIndex;
+                textBox2.Text = apps[index].Name.ToString();
+                textBox4.Text = apps[index].TimeWork.ToString();
+            }
         }
     }
 }
